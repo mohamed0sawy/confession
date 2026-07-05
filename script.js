@@ -86,7 +86,8 @@
 
   openBtn.addEventListener('click', startExperience);
 
-  function startExperience(){
+  async function startExperience(){
+    await requestFullscreenIfAvailable();
     openBtn.disabled = true;
     landing.classList.add('fade-out');
 
@@ -102,6 +103,19 @@
       video.currentTime = 0;
       video.play().catch(() => { goToFlip(); });
     }, 900);
+  }
+
+  async function requestFullscreenIfAvailable() {
+    const element = document.documentElement;
+
+    try {
+      if (!document.fullscreenElement && element.requestFullscreen) {
+        await element.requestFullscreen();
+      }
+    } catch (err) {
+      // Browser doesn't support fullscreen or denied the request.
+      console.log("Fullscreen not available:", err);
+    }
   }
 
   video.addEventListener('ended', goToFlip);
