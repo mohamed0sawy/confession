@@ -101,7 +101,11 @@
 
       videoStage.classList.add('visible');
       video.currentTime = 0;
-      video.play().catch(() => { goToFlip(); });
+      setTimeout(() => {
+        video.play().catch(() => {
+          goToFlip();
+        });
+      }, 2100);
     }, 900);
   }
 
