@@ -4,15 +4,23 @@
      Edit this array to add / remove / reorder memories.
   --------------------------------------------------------------- */
   const PHOTOS = [
-    { src: "assets/photos/1.jpg", caption: "Where it all began" },
-    { src: "assets/photos/2.jpg", caption: "The first of many adventures" },
-    { src: "assets/photos/3.jpg", caption: "A quiet moment, just us" },
-    { src: "assets/photos/4.jpg", caption: "Laughing about nothing at all" },
-    { src: "assets/photos/5.jpg", caption: "The day everything felt certain" },
-    { src: "assets/photos/6.jpg", caption: "The day everything felt certain" },
-    { src: "assets/photos/7.jpg", caption: "The day everything felt certain" },
-    { src: "assets/photos/10.jpg", caption: "The day everything felt certain" },
-    { src: "assets/photos/11.jpg", caption: "The day everything felt certain" }
+    { src: "assets/photos/1.jpg", caption: "I still remember how beautiful you looked that day…" },
+
+    { src: "assets/photos/2.jpg", caption: "…I couldn’t even focus, you were all I saw." },
+
+    { src: "assets/photos/3.jpg", caption: "Your smile made me forget everything I was going to say…" },
+
+    { src: "assets/photos/4.jpg", caption: "…but I knew I wanted you, more than words could explain." },
+
+    { src: "assets/photos/5.jpg", caption: "That moment when I finally confessed…" },
+
+    { src: "assets/photos/6.jpg", caption: "…looking at you made it worth it." },
+
+    { src: "assets/photos/7.jpg", caption: "You were so beautiful, I couldn’t believe you were real." },
+
+    { src: "assets/photos/10.jpg", caption: "And happily, you said 'me too'…" },
+
+    { src: "assets/photos/11.jpg", caption: "…and that became the most special day of my life." }
   ];
 
   const landing   = document.getElementById('landing');
@@ -86,6 +94,8 @@
       landing.style.display = 'none';
 
       music.volume = 0.55;
+        music.currentTime = 0;
+        music.loop = false;
       music.play().catch(() => {});
 
       videoStage.classList.add('visible');
@@ -109,7 +119,7 @@
     setTimeout(() => {
       videoStage.classList.remove('visible');
       spin();
-    }, 700);
+    }, 200);
   }
 
   /* ---------- 4. Spin the frame 180deg to face the viewer ---------- */
