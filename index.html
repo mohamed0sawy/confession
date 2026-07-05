@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Our Story</title>
+
+<!--
+  =====================================================================
+  HOW TO ADD YOUR OWN ASSETS
+  =====================================================================
+  1. Intro video       -> assets/video.mp4
+  2. Background music  -> assets/music.mp3
+  3. Last frame image  -> assets/last-frame.png
+     This MUST be the exact final frame of your video (the couple
+     holding the blank album). It is used twice: as the frozen frame,
+     and as the permanent "album background" that photos get placed
+     onto. If you re-render the video, replace this file with the new
+     final frame and re-check PAGE POSITIONING below.
+  4. Photos            -> edit the PHOTOS array near the bottom of the
+     <script> tag. Each entry just needs an image path and an
+     optional caption. That is the only place you need to touch to
+     add memories later.
+
+  =====================================================================
+  PAGE POSITIONING (read this if photos don't land on the blank pages)
+  =====================================================================
+  Photos are placed on top of the RIGHT blank page inside your image,
+  using percentages of the image's own width/height (not the screen).
+  Those percentages live in the CSS variables --page-* below. If your
+  final video's last frame frames the album slightly differently than
+  the sample screenshot, nudge these four numbers until the photo sits
+  neatly inside the blank page:
+
+      --page-top, --page-right, --page-bottom, --page-left
+
+  They're percentages measured from each edge of the image.
+  =====================================================================
+-->
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- 0. Rotate-device note (mobile portrait only) -->
+  <div id="rotate-prompt">
+    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4">
+      <rect x="5" y="2" width="14" height="20" rx="2.2"></rect>
+      <line x1="9" y1="19" x2="15" y2="19"></line>
+    </svg>
+    <p>For the full experience,<br>turn your phone sideways.</p>
+  </div>
+
+  <!-- 1. Landing -->
+  <div id="landing" class="stage">
+    <div class="landing-text line1" id="line1">Many years from now&hellip;</div>
+    <div class="landing-text line2" id="line2">Let&rsquo;s look back at where our story began.</div>
+    <button id="open-btn">&#10084; Open Our Album</button>
+  </div>
+
+  <!-- 2. Intro video -->
+  <div id="video-stage" class="stage frame-parent">
+    <div class="media-frame">
+      <video id="intro-video" muted playsinline preload="auto" poster="assets/last-frame.png">
+        <source src="assets/video.mp4" type="video/mp4">
+      </video>
+    </div>
+  </div>
+
+  <!-- 3/4/5. One frame, spun to face the viewer, then permanently the album -->
+  <div id="flip-stage" class="stage frame-parent">
+    <div class="media-frame">
+      <div id="flip-card">
+        <div class="flip-face flip-front">
+          <img src="assets/last-frame.png" alt="">
+        </div>
+        <div class="flip-face flip-back">
+          <img src="assets/last-frame.png" alt="">
+          <div id="page-overlay">
+            <div class="photo-slot" id="photo-slot"></div>
+            <p class="caption" id="caption"></p>
+            <div class="final-message" id="final-message">
+              <p class="heading">This album isn&rsquo;t finished yet&hellip;</p>
+              <p class="line">The best memories are still waiting for us.</p>
+              <p class="line">Let&rsquo;s keep filling these pages together, one beautiful memory at a time. &#10084;</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <button class="nav prev" id="prev-btn" aria-label="Previous photo">&larr; Previous</button>
+      <button class="nav next" id="next-btn" aria-label="Next photo">Next &rarr;</button>
+    </div>
+  </div>
+
+  <audio id="bg-music" loop preload="auto">
+    <source src="assets/music.mp3" type="audio/mpeg">
+  </audio>
+
+<script src="script.js"></script>
+</body>
+</html>
