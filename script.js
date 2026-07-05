@@ -4,23 +4,23 @@
      Edit this array to add / remove / reorder memories.
   --------------------------------------------------------------- */
   const PHOTOS = [
-    { src: "assets/photos/1.jpg", caption: "I still remember how beautiful you looked that day…" },
+    { src: "assets/photos/1_compressed.jpg", caption: "I still remember how beautiful you looked that day…" },
 
-    { src: "assets/photos/2.jpg", caption: "…I couldn’t even focus, you were all I saw." },
+    { src: "assets/photos/2_compressed.jpg", caption: "…I couldn’t even focus, you were all I saw." },
 
-    { src: "assets/photos/3.jpg", caption: "Your smile made me forget everything I was going to say…" },
+    { src: "assets/photos/3_compressed.jpg", caption: "Your smile made me forget everything I was going to say…" },
 
-    { src: "assets/photos/4.jpg", caption: "…but I knew I wanted you, more than words could explain." },
+    { src: "assets/photos/4_compressed.jpg", caption: "…but I knew I wanted you, more than words could explain." },
 
-    { src: "assets/photos/5.jpg", caption: "That moment when I finally confessed…" },
+    { src: "assets/photos/5_compressed.jpg", caption: "That moment when I finally confessed…" },
 
-    { src: "assets/photos/6.jpg", caption: "…looking at you made it worth it." },
+    { src: "assets/photos/6_compressed.jpg", caption: "…looking at you made it worth it." },
 
-    { src: "assets/photos/7.jpg", caption: "You were so beautiful, I couldn’t believe you were real." },
+    { src: "assets/photos/7_compressed.jpg", caption: "You were so beautiful, I couldn’t believe you were real." },
 
-    { src: "assets/photos/10.jpg", caption: "And happily, you said 'me too'…" },
+    { src: "assets/photos/10_compressed.jpg", caption: "And happily, you said 'me too'…" },
 
-    { src: "assets/photos/11.jpg", caption: "…and that became the most special day of my life." }
+    { src: "assets/photos/11_compressed.jpg", caption: "…and that became the most special day of my life." }
   ];
 
   const landing   = document.getElementById('landing');
